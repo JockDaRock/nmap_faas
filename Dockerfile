@@ -4,6 +4,8 @@ ADD https://github.com/openfaas-incubator/of-watchdog/releases/download/0.1.0/of
 
 RUN chmod +x /usr/bin/of-watchdog
 
+RUN apk update && apk add nmap
+
 WORKDIR /root/
 
 ENV fprocess="xargs nmap"
