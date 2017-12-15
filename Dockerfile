@@ -1,10 +1,12 @@
-FROM alpine
+#FROM alpine
+FROM debian
 
 ADD https://github.com/openfaas-incubator/of-watchdog/releases/download/0.1.0/of-watchdog /usr/bin
 
 RUN chmod +x /usr/bin/of-watchdog
 
-RUN apk update && apk add nmap
+# RUN apk update && apk add nmap
+RUN apt-get update && apt-get install nmap
 
 WORKDIR /root/
 
